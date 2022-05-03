@@ -1,6 +1,7 @@
 import streamlit as st
-import tkinter as tk
-from tkinter import ttk
+import tkinter
+import tkinter as ttk
+from tkinter import *
 
 TUTORIAL_URL = "https://docs.streamlit.io/en/latest/tutorial/databases.html"
 
@@ -9,41 +10,37 @@ INTRO_IDENTIFIER = "—"
 HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission App!
 
 
-  
-# Creating tkinter window
-window = tk.Tk()
-window.title('Combobox')
-window.geometry('500x250')
-  
-# label text for title
-ttk.Label(window, text = "Driver Input Webforms", 
-          background = 'green', foreground ="white", 
-          font = ("Times New Roman", 15)).grid(row = 0, column = 1)
-  
-# label
-ttk.Label(window, text = "Select the form :",
-          font = ("Times New Roman", 10)).grid(column = 0,
-          row = 5, padx = 10, pady = 25)
-  
-# Combobox creation
-n = tk.StringVar()
-monthchoosen = ttk.Combobox(window, width = 27, textvariable = n)
-  
-# Adding combobox drop down list
-monthchoosen['values'] = ('Expense Category and Cust Life by EG ', 
-                          'Override Cust Life by Entity and EG ',
-                          'Record Classification and Catchup Month by Role ',
-                          'Manage PRSI Tax Rates By Entity ',
-                          'Manage Buy Sell Entity Map ',
-                          'Manage PartRef Catchup By Entity ',
-                          'Average Life for Price Ramp Calculation ',
-                          'Manage Cap_Percent',
-                         )
-  
-monthchoosen.grid(column = 1, row = 5)
-monthchoosen.current()
-window.mainloop()
-
+ 
+ 
+root = tkinter.Tk()
+root.title("Tk dropdown example")
+ 
+# Add a grid
+mainframe = tkinter.Frame(root)
+mainframe.grid(column=0, row=0, sticky=(tkinter.N, tkinter.W, tkinter.E, tkinter.S))
+mainframe.columnconfigure(0, weight = 1)
+mainframe.rowconfigure(0, weight = 1)
+mainframe.pack(pady = 100, padx = 100)
+ 
+# Create a Tkinter variable
+tkvar = tkinter.StringVar(root)
+ 
+# Dictionary with options
+choices = { 'PYTHON','C','C++','PHP','JAVA'}
+tkvar.set('PYTHON') # set the default option
+ 
+popupMenu = tkinter.OptionMenu(mainframe, tkvar, *choices)
+tkinter.Label(mainframe, text="Choose Programming Language").grid(row = 1, column = 1)
+popupMenu.grid(row = 2, column =1)
+ 
+# on change dropdown value
+def change_dropdown(*args):
+    print( tkvar.get() )
+ 
+# link function to change dropdown
+tkvar.trace('w', change_dropdown)
+ 
+root.mainloop()
 **Ready?**
 
 👈 Choose the data source you want to access!
