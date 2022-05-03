@@ -1,16 +1,48 @@
 import streamlit as st
+import tkinter as tk
+from tkinter import ttk
 
 TUTORIAL_URL = "https://docs.streamlit.io/en/latest/tutorial/databases.html"
 
 INTRO_IDENTIFIER = "—"
 
-HOME_PAGE_TEXT = f""" ## Welcome to the 🔌 Data Sources app!
+HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission App!
 
-Congratulations, you have successfully forked and deployed this app 🎊  
 
-We'll now help you:
-- Collect your credentials and safely add them to your 🔑 Streamlit Secrets
-- Get started with your own app by providing you with sufficient code 🚀 
+  
+# Creating tkinter window
+window = tk.Tk()
+window.title('Combobox')
+window.geometry('500x250')
+  
+# label text for title
+ttk.Label(window, text = "Driver Input Webforms", 
+          background = 'green', foreground ="white", 
+          font = ("Times New Roman", 15)).grid(row = 0, column = 1)
+  
+# label
+ttk.Label(window, text = "Select the form :",
+          font = ("Times New Roman", 10)).grid(column = 0,
+          row = 5, padx = 10, pady = 25)
+  
+# Combobox creation
+n = tk.StringVar()
+monthchoosen = ttk.Combobox(window, width = 27, textvariable = n)
+  
+# Adding combobox drop down list
+monthchoosen['values'] = ('Expense Category and Cust Life by EG ', 
+                          'Override Cust Life by Entity and EG ',
+                          'Record Classification and Catchup Month by Role ',
+                          'Manage PRSI Tax Rates By Entity ',
+                          'Manage Buy Sell Entity Map ',
+                          'Manage PartRef Catchup By Entity ',
+                          'Average Life for Price Ramp Calculation ',
+                          'Manage Cap_Percent',
+                         )
+  
+monthchoosen.grid(column = 1, row = 5)
+monthchoosen.current()
+window.mainloop()
 
 **Ready?**
 
