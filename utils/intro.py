@@ -5,15 +5,17 @@ TUTORIAL_URL = "https://docs.streamlit.io/en/latest/tutorial/databases.html"
 
 INTRO_IDENTIFIER = "—"
 
-HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission App!
+HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission Application
 
-
- 
- 
 option = st.selectbox(
-...     'Select a form',
-...     ('Form 1', 'Form 2', 'Form 3'))
- st.write('You selected:', option)
+     'How would you like to be contacted?',
+     ('Email', 'Home phone', 'Mobile phone'))
+
+st.write('You selected:', option)
+
+ 
+ 
+
 **Ready?**
 
 👈 Choose the data source you want to access!
