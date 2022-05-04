@@ -5,7 +5,7 @@ TUTORIAL_URL = "https://docs.streamlit.io/en/latest/tutorial/databases.html"
 
 INTRO_IDENTIFIER = "—"
 
-HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission App """
+Welcome to Capital Commission App 
 
 
  #adding a selectbox
@@ -22,7 +22,6 @@ choice = st.selectbox(
 
 st.write('You have selected:', choice)
 
- 
 
 
 
