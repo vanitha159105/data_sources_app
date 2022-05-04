@@ -9,12 +9,7 @@ from data_sources import big_query, snowflake, aws_s3_boto, google_sheet
 
 from utils import ui, intro
 
-#adding a selectbox
-choice = st.selectbox(
-    'Select the items you want?',
-    ('Pen','Pencil','Eraser','Sharpener','Notebook'))
-#displaying the selected option
-st.write('You have selected:', choice)
+
 
 DATA_SOURCES = {
     intro.INTRO_IDENTIFIER: {
@@ -56,6 +51,13 @@ DATA_SOURCES = {
         "tutorial_anchor": "#tutorial-connecting-to-google-sheet",
     },
 }
+
+#adding a selectbox
+choice = st.selectbox(
+    'Select the items you want?',
+    ('Pen','Pencil','Eraser','Sharpener','Notebook'))
+#displaying the selected option
+st.write('You have selected:', choice)
 
 NO_CREDENTIALS_FOUND = """❌ **We couldn't find credentials for '`{}`' in your Streamlit Secrets.**   
 Please follow our tutorial just below 👇"""
