@@ -1,8 +1,7 @@
 import inspect
 import textwrap
 import streamlit as st
-import tkinter as tk
-from tkinter import ttk
+
 from pathlib import Path
 
 import data_sources
