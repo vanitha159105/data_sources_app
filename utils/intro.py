@@ -5,10 +5,21 @@ TUTORIAL_URL = "https://docs.streamlit.io/en/latest/tutorial/databases.html"
 
 INTRO_IDENTIFIER = "—"
 
-HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission Application
+HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission App
 
-Host_Country = st.selectbox('Select HomeTeamName name:',('France', 'Spain', 'Italy', 'England', 'Belgium', 'Portugal','Sweden'))
-st.write('You selected:', Host_Country)
+#adding a selectbox
+
+choice = st.selectbox(
+
+    'Select the items you want?',
+
+    ('Pen','Pencil','Eraser','Sharpener','Notebook'))
+
+
+
+#displaying the selected option
+
+st.write('You have selected:', choice)
 
  
  
