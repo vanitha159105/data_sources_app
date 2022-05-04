@@ -5,7 +5,7 @@ TUTORIAL_URL = "https://docs.streamlit.io/en/latest/tutorial/databases.html"
 
 INTRO_IDENTIFIER = "—"
 
-Welcome to Capital Commission App 
+HOME_PAGE_TEXT = f""" Welcome to Capital Commission App """
 
 
  #adding a selectbox
