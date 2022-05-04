@@ -9,6 +9,13 @@ from data_sources import big_query, snowflake, aws_s3_boto, google_sheet
 
 from utils import ui, intro
 
+#adding a selectbox
+choice = st.selectbox(
+    'Select the items you want?',
+    ('Pen','Pencil','Eraser','Sharpener','Notebook'))
+#displaying the selected option
+st.write('You have selected:', choice)
+
 DATA_SOURCES = {
     intro.INTRO_IDENTIFIER: {
         "module": intro,
