@@ -5,9 +5,10 @@ TUTORIAL_URL = "https://docs.streamlit.io/en/latest/tutorial/databases.html"
 
 INTRO_IDENTIFIER = "—"
 
-HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission App
+HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission App """
 
-#adding a selectbox
+
+ #adding a selectbox
 
 choice = st.selectbox(
 
@@ -22,12 +23,8 @@ choice = st.selectbox(
 st.write('You have selected:', choice)
 
  
- 
 
-**Ready?**
 
-👈 Choose the data source you want to access!
-"""
 
 
 def load_keyboard_class():
