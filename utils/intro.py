@@ -7,11 +7,8 @@ INTRO_IDENTIFIER = "—"
 
 HOME_PAGE_TEXT = f""" ## Welcome to Capital Commission Application
 
-option = st.selectbox(
-     'How would you like to be contacted?',
-     ('Email', 'Home phone', 'Mobile phone'))
-
-st.write('You selected:', option)
+Host_Country = st.selectbox('Select HomeTeamName name:',('France', 'Spain', 'Italy', 'England', 'Belgium', 'Portugal','Sweden'))
+st.write('You selected:', Host_Country)
 
  
  
