@@ -52,12 +52,7 @@ DATA_SOURCES = {
     },
 }
 
-#adding a selectbox
-choice = st.selectbox(
-    'Select the items you want?',
-    ('Pen','Pencil','Eraser','Sharpener','Notebook'))
-#displaying the selected option
-st.write('You have selected:', choice)
+
 
 NO_CREDENTIALS_FOUND = """❌ **We couldn't find credentials for '`{}`' in your Streamlit Secrets.**   
 Please follow our tutorial just below 👇"""
