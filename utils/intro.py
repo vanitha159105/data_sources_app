@@ -8,19 +8,6 @@ INTRO_IDENTIFIER = "—"
 HOME_PAGE_TEXT = f""" Welcome to Capital Commission App """
 
 
- #adding a selectbox
-
-choice = st.selectbox(
-
-    'Select the items you want?',
-
-    ('Pen','Pencil','Eraser','Sharpener','Notebook'))
-
-
-
-#displaying the selected option
-
-st.write('You have selected:', choice)
 
 
 
