@@ -1,124 +1,50 @@
-import pandas
-import numpy
 import streamlit as st
 
-st.title("Streamlit intro")
-st.write("Examples below were taken from:  https://streamlit.io/docs/getting_started.html#get-started")
+TUTORIAL_URL = "https://docs.streamlit.io/en/latest/tutorial/databases.html"
+
+INTRO_IDENTIFIER = "—"
+
+HOME_PAGE_TEXT = f""" ## Capital Commission app!
+
+"""
 
 
-st.subheader("Here's our first attempt at using data to create a table:")
-
-st.code("""
-df = pandas.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-})
-""", language='python')
-df = pandas.DataFrame({
-  'first column': [1, 2, 3, 4],
-  'second column': [10, 20, 30, 40]
-})
-# here we use 'magic', 
-# any time that Streamlit sees a variable or a literal value on its own line, 
-# it automatically writes that to your app using st.write()
-df
-
-
-
-st.subheader("Draw a line hart:")
-st.code("""
-chart_data = pandas.DataFrame(
-     numpy.random.randn(20, 3),
-     columns=['a', 'b', 'c'])
-st.line_chart(chart_data)
-""", language='python')
-
-chart_data = pandas.DataFrame(
-     numpy.random.randn(20, 3),
-     columns=['a', 'b', 'c'])
-st.line_chart(chart_data)
+def load_keyboard_class():
+    st.write(
+        """<style>
+    .kbdx {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+    color: #333;
+    display: inline-block;
+    font-size: .85em;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+   }
+   </style>""",
+        unsafe_allow_html=True,
+    )
 
 
-st.subheader("Let’s use Numpy to generate some sample data and plot it on a map of San Francisco:")
+def app():
 
-st.code("""
-map_data = pandas.DataFrame(
-    numpy.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=['lat', 'lon'])
-st.map(map_data)
-""", language='python')
+    load_keyboard_class()
 
-map_data = pandas.DataFrame(
-    numpy.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=['lat', 'lon'])
-st.map(map_data)
+    st.write(HOME_PAGE_TEXT, unsafe_allow_html=True)
+    #adding a selectbox
+
+choice = st.selectbox(
+
+    'Select the items you want?',
+
+    ('Pen','Pencil','Eraser','Sharpener','Notebook'))
 
 
 
-st.title("Add interactivity with widgets")
+#displaying the selected option
 
-st.subheader("Use checkboxes to show/hide data")
-
-st.code("""
-if st.checkbox('Show dataframe'):
-    chart_data = pandas.DataFrame(
-       numpy.random.randn(20, 3),
-       columns=['a', 'b', 'c'])
-    st.line_chart(chart_data)
-""", language='python')
-
-if st.checkbox('Show dataframe'):
-    chart_data = pandas.DataFrame(
-       numpy.random.randn(20, 3),
-       columns=['a', 'b', 'c'])
-
-    st.line_chart(chart_data)
-
-
-st.subheader("Put widgets in a sidebar")
-
-st.code("""
-if st.checkbox('Show in sidebar'):
-    option = st.sidebar.selectbox(
-        'Which number do you like best?',
-        ["a", "b","c"])
-    'You selected:', option
-""", language='python')
-
-if st.checkbox('Show in sidebar'):
-    option = st.sidebar.selectbox(
-        'Which number do you like best?',
-        ["a", "b","c"])
-
-    'You selected:', option
-
-
-
-st.subheader("Show progress")
-
-st.code("""
-import time
-# Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
-for i in range(100):
-  # Update the progress bar with each iteration.
-  latest_iteration.text(f'Iteration {i+1}')
-  bar.progress(i + 1)
-  time.sleep(0.1)
-'...and now we\'re done!'
-""", language='python')  
-
-import time
-
-# Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
-
-for i in range(100):
-  # Update the progress bar with each iteration.
-  latest_iteration.text(f'Iteration {i+1}')
-  bar.progress(i + 1)
-  time.sleep(0.1)
-
-'...and now we\'re done!'
+st.write('You have selected:', choice)
